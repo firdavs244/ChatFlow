@@ -1,0 +1,192 @@
+# ===========================================
+# ChatFlow - Git Ignore
+# ===========================================
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+*.whl
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+.nuxt/
+*.tsbuildinfo
+next-env.d.ts
+.npm
+.eslintcache
+.yarn/
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts.map
+
+# IDE / Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Docker
+docker-compose.override.yml
+.dockerignore.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+postgres-data/
+pgdata/
+
+# Redis
+redis-data/
+dump.rdb
+
+# MinIO / S3
+minio-data/
+s3-data/
+
+# Secrets & Keys
+*.pem
+*.key
+*.crt
+secrets/
+*.secret
+config/secrets/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Testing
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+cypress/videos/
+cypress/screenshots/
+.nyc_output
+
+# Build artifacts
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# Frontend specific
+.next/
+out/
+.vercel
+.turbo
+.cache/
+
+# Backend specific
+static/uploads/
+static/avatars/
+app/static/
+app/logs/
+
+# Monitoring
+monitoring/grafana/data/
+monitoring/prometheus/data/
+
+# Local development
+.local/
+local/
+*.local
+
+# Package manager locks (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Misc
+*.orig
+.cache/
+.temp/
+tmp/
