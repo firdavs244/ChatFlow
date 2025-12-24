@@ -83,14 +83,32 @@ class Settings(BaseSettings):
         return self.MAX_FILE_SIZE_MB * 1024 * 1024
 
     # CORS
-    CORS_ORIGINS: List[str] = [
-        "http://localhost",
-        "http://localhost:80",
-        "http://localhost:3000",
-        "http://127.0.0.1",
-        "http://127.0.0.1:80",
-        "http://127.0.0.1:3000",
-    ]
+    CORS_ORIGINS_STR: Optional[str] = Field(
+        default=None,
+        description="Comma-separated list of allowed CORS origins"
+    )
+    
+    @property
+    def CORS_ORIGINS(self) -> List[str]:
+        """Get CORS origins from environment or use defaults."""
+        if self.CORS_ORIGINS_STR:
+            # Parse comma-separated string
+            origins = [origin.strip() for origin in self.CORS_ORIGINS_STR.split(",") if origin.strip()]
+            return origins
+        
+        # Default origins for local development
+        default_origins = [
+            "http://localhost",
+            "http://localhost:80",
+            "http://localhost:3000",
+            "http://127.0.0.1",
+            "http://127.0.0.1:80",
+            "http://127.0.0.1:3000",
+        ]
+        
+        # Note: Codespaces URLs are handled via allow_origin_regex in main.py
+        
+        return default_origins
 
     class Config:
         env_file = ".env"

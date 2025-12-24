@@ -91,17 +91,44 @@ Professional darajadagi real-time chat ilovasi - Telegram, WhatsApp, Messenger u
 
 ## 🚀 Ishga tushirish
 
-### Talablar
+### 📦 Variant 1: GitHub Codespaces (Tavsiya etiladi)
+
+**Eng oson usul - bir necha bosqich:**
+
+1. GitHub repository'da **"Code"** tugmasini bosing
+2. **"Codespaces"** tab'ini tanlang
+3. **"Create codespace on main"** tugmasini bosing
+4. 2-3 daqiqada barcha service'lar avtomatik ishga tushadi
+5. Ports tab'ida portlarni oching va foydalaning
+
+**Ports:**
+- Frontend: `3000`
+- Backend API: `8000`
+- MinIO Console: `9001`
+- Grafana: `3001`
+
+**Qo'shimcha ma'lumot:** `.devcontainer/README.md` fayliga qarang
+
+---
+
+### 🐳 Variant 2: Docker Compose (Local)
+
+**Talablar:**
 - Docker va Docker Compose
 - Git
 
-### 1. Repozitoriyani clone qilish
+**1. Repozitoriyani clone qilish:**
 ```bash
-git clone <repository-url>
-cd chat-app
+git clone https://github.com/firdavs244/ChatFlow.git
+cd ChatFlow
 ```
 
-### 2. Docker Compose orqali ishga tushirish
+**2. Environment faylini yaratish:**
+```bash
+cp .env.example .env  # yoki manual yarating
+```
+
+**3. Docker Compose orqali ishga tushirish:**
 ```bash
 # Development mode
 docker-compose up -d
@@ -245,6 +272,6 @@ MIT License
 ---
 
 <div align="center">
-  <p>Made with ❤️ for Dasturiy Injinering</p>
+  <p></p>
 </div>
 

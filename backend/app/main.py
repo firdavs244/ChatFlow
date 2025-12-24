@@ -89,9 +89,14 @@ app = FastAPI(
 )
 
 # CORS middleware
+# Separate origins and regex patterns for Codespaces support
+cors_origins = [origin for origin in settings.CORS_ORIGINS if "*" not in origin]
+cors_origin_regex = r"https://.*\.(preview\.)?app\.github\.dev"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=cors_origins,
+    allow_origin_regex=cors_origin_regex if settings.APP_ENV == "codespaces" else None,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

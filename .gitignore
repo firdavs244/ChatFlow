@@ -10,6 +10,8 @@
 .env.production
 .env.test
 *.env
+# Keep .env.codespaces.example for reference
+!.env.codespaces.example
 
 # Python
 __pycache__/
